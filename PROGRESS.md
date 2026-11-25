@@ -5,7 +5,7 @@
 >
 > Den här filen är projektets minne. Uppdatera den varje gång något blir klart eller beslutas.
 
-Senast uppdaterad: 2026-11-24
+Senast uppdaterad: 2026-11-25
 
 ---
 
@@ -17,7 +17,7 @@ Senast uppdaterad: 2026-11-24
 | GitHub Pages påslaget för förhandsvisning | ⬜ Vidar gör (se steg 1) |
 | Meritlista uppdaterad | ⬜ Väntar på ny lista från Vidar |
 | Bilder | ⬜ Platshållare inlagda – riktiga bilder kommer |
-| Nyhetsbrev (MailerLite → ?) | ⬜ Ska redas ut före 27/12 |
+| Nytt nyhetsbrev (ersätter MailerLite) | ⬜ Plan nedan – startas om från grunden |
 | DNS-flytt (WordPress → Misshosting) | ⬜ Inventering klar, se `docs/dns-inventering.md` |
 | Domänbyte till GitHub Pages | ⬜ |
 | WordPress avvecklat | ⬜ |
@@ -34,21 +34,21 @@ Senast uppdaterad: 2026-11-24
 - **Domän:** `aifolkbildaren.se` ska vara själva hemsidan (roten). Den adressen finns på många ställen och får inte ändras.
 - **Bilder:** platshållarrutor (`.ph` i HTML, märkta "Bild: …") tills Vidar laddar upp riktiga bilder.
 - **Lösenordet i portalerna:** inte en del av det här projektet – lämnas därhän.
+- **Domänkoppling (alt. A, beslutat 2026-11-25):** `aifolkbildaren.se` kopplas till *det här* repot. Utbildningsportalerna ligger kvar på sina vanliga `vidarru.github.io/...`-adresser.
+- **Kontaktadress:** Gmail-adressen visas på sidan (den Vidar läser varje dag).
+- **Textändringar godkända:** "pedagogisk" (inte "politisk") om den publika föreläsningen, och ingen ålder i presentationen.
+- **Titan:** användes tidigare men är felinställd och ska inte användas – DNS-posterna för Titan tas bort.
+- **Nyhetsbrev:** MailerLite-upplägget görs om från grunden (se avsnittet *Nytt nyhetsbrev*). Avsändaradressen behöver inte vara densamma som förut.
 
 ## Öppna frågor / beslut som behövs
 
-1. **Ska portalerna hamna under aifolkbildaren.se?** Det finns två sätt:
-   - **A – Domänen på det här repot.** `aifolkbildaren.se` = hemsidan. Portalerna ligger kvar på `vidarru.github.io/<portal>/`. Enklast, påverkar inget annat.
-   - **B – Gör det här repot till användarsajt** (döp om till `VidarRu.github.io`) och sätt domänen där. Då hamnar hemsidan på `aifolkbildaren.se` och **alla** dina publika GitHub Pages-projekt automatiskt på `aifolkbildaren.se/<repo>/` (gamla github.io-länkar omdirigeras). OBS: det gäller även orelaterade projekt (t.ex. bokklubb, partisajt, 3D-bibliotek) om de har Pages påslaget – de kan få en egen domän eller stängas av.
-   - *Rekommendation:* A nu (snabbt och säkert före 27/12), B kan göras senare om det önskas.
-2. **Kontaktadress:** sidan visar Gmail-adressen (som på WordPress). Domänen har e-post via Microsoft 365 – vill du hellre visa en `@aifolkbildaren.se`-adress?
-3. **Nyhetsbrev:** byta från MailerLite till Substack? I så fall: exportera prenumeranterna från MailerLite och importera i Substack *före* avvecklingen. Behöver MailerLite vara kvar alls efter 27/12?
-4. **Titan-e-post:** DNS innehåller rester av Titan (WordPress.com:s e-posttjänst). Används den? Troligen inte – då tas posterna bort.
+1. **Nyhetsbrevstjänst:** Substack eller annan tjänst? Se avsnittet *Nytt nyhetsbrev* nedan.
+2. **Prenumeranterna i MailerLite:** finns det en lista värd att ta med? Exportera den i så fall innan kontot avslutas.
 
-## Att granska i texterna (ändrat vid flytten)
+## Att granska i texterna
 
-- Publik föreläsning: originalet sa "en **politisk** och informativ föreläsning" – ändrat till "**pedagogisk**". Stämmer det?
-- "Jag heter Vidar och är 40 år" – åldern är borttagen (blir inaktuell). OK?
+- ~~"politisk" → "pedagogisk"~~ ✅ godkänt
+- ~~Ålder borttagen~~ ✅ godkänt
 - Små språkfixar i utbildningstexterna (t.ex. "med din personliga på plats" → "med er personal på plats").
 - Länken "Kom i gång med AI" (Internetkunskap) innehåller `%20` i adressen och kan vara trasig – kontrollera.
 - Meritlistan är från hösten 2025 – **ska uppdateras** (Vidar skickar ny lista).
@@ -62,7 +62,8 @@ Senast uppdaterad: 2026-11-24
 - [x] Bygga startsida + resursbibliotek i portalens design, ljusare
 - [x] Skriva denna plan + DNS-inventering
 - [ ] **Vidar:** slå på GitHub Pages för förhandsvisning: repot → *Settings → Pages → Build and deployment → Deploy from a branch* → välj `main` (efter att ändringarna slagits ihop) och mappen `/ (root)`. Sidan syns då på `https://vidarru.github.io/aifolkbildaren_hemsida/`
-- [ ] **Vidar:** granska texter och design, svara på öppna frågor ovan
+- [x] Pull request skapad med första versionen
+- [ ] **Vidar:** granska texter och design
 
 ### Vecka 49 (1–7 dec) – Innehåll och förberedelser
 - [ ] Uppdaterad meritlista in på sidan
@@ -71,8 +72,7 @@ Senast uppdaterad: 2026-11-24
 - [ ] **Säkerhetskopiera WordPress:** WordPress.com → Verktyg → Exportera (allt innehåll + mediebiblioteket). Spara zip-filerna lokalt
 - [ ] Ladda ner de bilder från WordPress som ska återanvändas
 - [ ] **Vidar:** logga in på Misshosting och kontrollera att du kan hantera DNS-poster där för domänen (det är dit DNS ska flyttas)
-- [ ] Beslut om nyhetsbrev (MailerLite/Substack) och ev. export av prenumeranter
-- [ ] Beslut i fråga 1 (portalerna) – påverkar vilken repo domänen kopplas till
+- [ ] Välj nyhetsbrevstjänst och exportera ev. prenumeranter från MailerLite (se *Nytt nyhetsbrev*)
 
 ### Vecka 50 (8–14 dec) – Klart för lansering
 - [ ] Omdirigeringssidor för gamla WordPress-adresser (se lista nedan)
@@ -88,18 +88,48 @@ Senast uppdaterad: 2026-11-24
 - [ ] Vänta på spridning (några timmar, upp till ett dygn)
 - [ ] Kontrollera: sajten laddar på `aifolkbildaren.se` och `www.aifolkbildaren.se`, slå på **Enforce HTTPS**
 - [ ] **Kontrollera e-posten:** skicka och ta emot på domänadressen (Microsoft 365)
-- [ ] Kontrollera nyhetsbrevsutskick om MailerLite fortfarande används
 
 ### Vecka 52 (22–27 dec) – Avveckling och marginal
-- [ ] WordPress.com: stäng av automatisk förnyelse av domänkopplingen och eventuell plan (Upgrades → Purchases)
+- [ ] WordPress.com: stäng av automatisk förnyelse av domänkopplingen **och betalplanen** (Upgrades → Purchases). Planen behövs inte längre: domänen ägs via Misshosting och e-posten går via Microsoft 365
+- [ ] MailerLite: avsluta kontot när prenumeranterna är exporterade
 - [ ] Koppla bort domänen från WordPress-sajten
 - [ ] Låt WordPress-sajten ligga kvar (privat) en tid som backup, eller radera när allt är verifierat
 - [ ] Google Search Console: lägg till/verifiera sajten igen om det behövs
 
 ### Senare (efter 27 dec)
-- [ ] **Nyhetsbrevssida** (`/nyhetsbrev/`) där Substack-utskick publiceras/speglas så att man kan läsa dem på sajten
+- [ ] **Nyhetsbrevssida** (`/nyhetsbrev/`) där utskicken publiceras/speglas så att man kan läsa dem på sajten
 - [ ] Fler resurser i resursbiblioteket (material från utbildningarna)
-- [ ] Ev. flytta portalerna in under domänen (fråga 1, alternativ B)
+
+---
+
+## Nytt nyhetsbrev
+
+**Problemet i dag:** utskicken via MailerLite riskerar att hamna i skräpposten. Upplägget har varit MailerLite (gratis) med avsändare på företagsdomänen, och WordPress-planen betalades i praktiken för att få en domän som MailerLite godkände. Titan-inställningarna var dessutom felaktiga.
+
+**Bra att veta:** domänen `aifolkbildaren.se` är din via Misshosting oavsett WordPress. När DNS ligger hos Misshosting kan du styra alla e-postinställningar själv, så WordPress-planen behövs inte för nyhetsbrevet.
+
+**Varför utskick hamnar i skräpposten:** mottagarnas e-posttjänster kontrollerar att avsändardomänen har godkänt tjänsten som skickar. Det sker med tre DNS-poster: **SPF** (vilka servrar som får skicka), **DKIM** (digital signatur) och **DMARC** (vad som ska hända om kontrollerna misslyckas). Saknas någon av dem, eller pekar fel som Titan-posterna, kan Gmail och Outlook sortera bort utskicken.
+
+**Två vägar:**
+
+| | **Substack** (Vidars första tanke) | **Nyhetsbrevstjänst med egen domän** (MailerLite, Brevo m.fl.) |
+|---|---|---|
+| Avsändare | Substacks egen domän (t.ex. `aifolkbildaren@substack.com`) | `nyhetsbrev@aifolkbildaren.se` eller liknande |
+| Skräppost | Substack sköter SPF/DKIM/DMARC själva. Inga DNS-poster behövs. | Kräver att SPF, DKIM och DMARC läggs in rätt i DNS |
+| Arkiv att läsa på webben | Ingår (Substack-sidan), kan speglas till `/nyhetsbrev/` | Måste byggas själv |
+| Kostnad | Gratis för gratisnyhetsbrev | Gratisnivåer finns, med begränsningar |
+
+*Rekommendation:* **Substack**. Det löser skräppostproblemet utan DNS-arbete och ger ett arkiv direkt. Om en egen domän önskas senare kan Substack kopplas till t.ex. `nyhetsbrev.aifolkbildaren.se`.
+
+**Steg:**
+- [ ] Bestäm tjänst (Substack eller annan)
+- [ ] Exportera prenumeranter från MailerLite (CSV) om listan ska följa med. Kontrollera att de har gett samtycke till att få utskick
+- [ ] Skapa nyhetsbrevet, med namn, beskrivning och välkomstmejl
+- [ ] Importera prenumeranterna
+- [ ] Skicka ett testutskick till Gmail och Outlook och kontrollera att det inte hamnar i skräpposten
+- [ ] Lägg in ett "Prenumerera"-fält eller en länk på hemsidan (t.ex. i Kontakt och i sidfoten)
+- [ ] Ta bort MailerLite-posterna ur DNS och avsluta MailerLite
+- [ ] Senare: sidan `/nyhetsbrev/` med utskicken
 
 ---
 
@@ -124,4 +154,5 @@ Undersidor under `/utbildningsmoduler/`: `teoretisk-introduktion-till-generativ-
 
 ## Logg
 
+- **2026-11-25** – Beslut: domänen kopplas till det här repot (alt. A), Gmail visas som kontaktadress, "pedagogisk" och borttagen ålder godkända, Titan tas bort. Plan för nytt nyhetsbrev tillagd. Pull request skapad.
 - **2026-11-24** – Projektet startat. WordPress-sajten inventerad (16 sidor, 1 inlägg, 2 menyer, DNS). Beslut om struktur, design och vad som följer med. Första version av `index.html` och `resursbibliotek/` byggd. Plan och DNS-inventering skrivna.

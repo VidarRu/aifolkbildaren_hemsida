@@ -39,13 +39,13 @@ Ersätter WordPress A-poster (`192.0.78.24`, `192.0.78.25`) och `www` → `aifol
 
 | Typ | Namn | Värde i dag | Förslag |
 |---|---|---|---|
-| TXT | `@` | `v=spf1 a mx include:spf.titan.email include:_spf.mlsend.com include:spf.protection.outlook.com ~all` | `v=spf1 include:spf.protection.outlook.com ~all` + `include:_spf.mlsend.com` om MailerLite blir kvar. Ta bort `a` (pekar på GitHub efter flytten) och Titan om den inte används. |
+| TXT | `@` | `v=spf1 a mx include:spf.titan.email include:_spf.mlsend.com include:spf.protection.outlook.com ~all` | `v=spf1 include:spf.protection.outlook.com ~all`. Ta bort `a` (pekar på GitHub efter flytten), Titan (beslutat) och MailerLite (ersätts). Lägg till nyhetsbrevstjänstens `include:` bara om den skickar från den egna domänen. |
 | TXT | `_dmarc` | `v=DMARC1;p=none;sp=none;adkim=r;aspf=r;pct=100` | Behåll |
 | TXT | `@` | `google-site-verification=AUYeaiN5WkbaDXjS06GxIlJnrUX6OwCJDJAdNq1vyl0` | Behåll (Google Search Console) |
 
-## 4. Nyhetsbrev – MailerLite (beror på beslut)
+## 4. Nyhetsbrev – MailerLite (ska bort)
 
-Behövs bara om MailerLite används efter flytten.
+MailerLite ersätts av ett nytt nyhetsbrev (se `PROGRESS.md`). Posterna flyttas **inte** med.
 
 | Typ | Namn | Värde |
 |---|---|---|
@@ -58,7 +58,8 @@ Om nyhetsbrevet flyttar till Substack: Substack behöver normalt inga poster, ut
 
 | Typ | Namn | Varför |
 |---|---|---|
-| TXT | `titan1._domainkey` | Titan (WordPress.com:s e-post) – används troligen inte, kontrollera först |
+| TXT | `titan1._domainkey` | Titan (WordPress.com:s e-post) – felinställd och används inte längre (beslutat 2026-11-25) |
+| CNAME / TXT | `litesrv._domainkey`, `mailerlite-domain-verification` | MailerLite ersätts |
 | TXT | `_domainconnect` | Gäller bara WordPress.com |
 | NS / A (skyddade) | `@` | WordPress.com:s egna, ersätts av Misshostings namnservrar och GitHub-posterna ovan |
 
