@@ -1,0 +1,7 @@
+# GitHub Pages bygger med Jekyll som standard. Sajten är vanlig HTML,
+# men projektfilerna nedan ska inte publiceras som sidor på hemsidan.
+exclude:
+  - PROGRESS.md
+  - CLAUDE.md
+  - README.md
+  - docs/
