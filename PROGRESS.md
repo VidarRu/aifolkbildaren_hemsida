@@ -15,7 +15,7 @@ Senast uppdaterad: 2026-11-25
 |---|---|
 | Första version av startsida + resursbibliotek | ✅ Klar (2026-11-24), väntar på Vidars granskning |
 | GitHub Pages påslaget för förhandsvisning | ✅ Live på vidarru.github.io/aifolkbildaren_hemsida/ |
-| Meritlista uppdaterad | ⬜ Väntar på ny lista från Vidar |
+| Meritlista uppdaterad | ✅ Utförda uppdrag hämtade från CRM:en (2026-11-25) |
 | Bilder | ⬜ Platshållare inlagda – riktiga bilder kommer |
 | Nytt nyhetsbrev på Substack (ersätter MailerLite) | ⬜ Beslutat – se *Nytt nyhetsbrev* |
 | DNS-flytt (WordPress → Misshosting) | ⬜ Inventering klar, se `docs/dns-inventering.md` |
@@ -50,7 +50,7 @@ Senast uppdaterad: 2026-11-25
 - ~~Ålder borttagen~~ ✅ godkänt
 - Små språkfixar i utbildningstexterna (t.ex. "med din personliga på plats" → "med er personal på plats").
 - Länken "Kom i gång med AI" (Internetkunskap) innehåller `%20` i adressen och kan vara trasig – kontrollera.
-- Meritlistan är från hösten 2025 – **ska uppdateras** (Vidar skickar ny lista).
+- Meritlistan uppdaterad 2026-11-25: alla avslutade uppdrag från CRM:en (Supabase) ligger under *Utförda uppdrag*, nyast först. Pågående och kommande uppdrag (Region Örebro, Östersund, Region Dalarna 2, Region Gotland) läggs till när de är avslutade.
 
 ---
 
@@ -65,7 +65,7 @@ Senast uppdaterad: 2026-11-25
 - [ ] **Vidar:** granska texter och design
 
 ### Vecka 49 (1–7 dec) – Innehåll och förberedelser
-- [ ] Uppdaterad meritlista in på sidan
+- [x] Uppdaterad meritlista in på sidan
 - [ ] Bilder: ladda upp och placera ut (ersätt `.ph`-rutorna)
 - [ ] Finslipa utbildningsupplägget
 - [ ] **Säkerhetskopiera WordPress:** WordPress.com → Verktyg → Exportera (allt innehåll + mediebiblioteket). Spara zip-filerna lokalt
@@ -161,6 +161,7 @@ Undersidor under `/utbildningsmoduler/`: `teoretisk-introduktion-till-generativ-
 
 ## Logg
 
+- **2026-11-25** – Meritlistan uppdaterad med 21 avslutade uppdrag från CRM:en. Samma lista inlagd i CV:t i Google Drive.
 - **2026-11-25** – Hemsidan publicerad som förhandsvisning på `vidarru.github.io/aifolkbildaren_hemsida/`. Beslut: nyhetsbrevet flyttar till Substack, och adresslistan från MailerLite förs över.
 - **2026-11-25** – Beslut: domänen kopplas till det här repot (alt. A), Gmail visas som kontaktadress, "pedagogisk" och borttagen ålder godkända, Titan tas bort. Plan för nytt nyhetsbrev tillagd. Pull request skapad.
 - **2026-11-24** – Projektet startat. WordPress-sajten inventerad (16 sidor, 1 inlägg, 2 menyer, DNS). Beslut om struktur, design och vad som följer med. Första version av `index.html` och `resursbibliotek/` byggd. Plan och DNS-inventering skrivna.
