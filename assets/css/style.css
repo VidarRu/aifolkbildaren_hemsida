@@ -281,6 +281,11 @@ a.card .more { margin-top: auto; color: var(--part); font-weight: 600; font-size
 .cv li:last-child { border-bottom: 0; }
 .cv .when { color: var(--part); font-weight: 600; font-size: .92rem; font-variant-numeric: tabular-nums; }
 @media (max-width: 520px) { .cv li { grid-template-columns: 1fr; gap: .1rem; } }
+.cv .cv-wide { grid-column: 1 / -1; }
+@media (min-width: 900px) {
+  .cv .cv-wide ul { display: block; columns: 2; column-gap: clamp(1.5rem, 3vw, 2.5rem); }
+  .cv .cv-wide li { break-inside: avoid; margin-bottom: .55rem; }
+}
 
 /* ── RESURSBIBLIOTEKET ──────────────────────────────────────────── */
 .toc { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.6rem; }
